@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+
+body {
+    background-image: url("assets/background-img.png");
+    background-size: cover;
+    background-position: center;
+    font-family: "Inconsolata", monospace;
+}
+
+span {
+    background: white !important;
+}
+
+#home {
+    position: fixed;
+    top: 10%;
+}
+
+#home img {
+    display: block;
+    margin: 10px auto;
+    width: 75%;
+}
+
+#typewriter-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.typewriter h1 {
+    overflow: hidden;
+    border-right: .1em solid white;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+    color: white;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: white; }
+}
+
+.about-container {
+    background: #23272A;
+}
+
+#about {
+    text-align: justify;
+    color: white;
+    width: 70%;
+    margin: 10px auto;
+}
+
+#about h1 {
+    text-align: center;
+}
+
+nav {
+    text-align: center;
+    margin-top: 20px;
+}
+
+nav a {
+    color: white;
+    font-size: 20px;
+}
+
+.sponsors {
+    text-align: center;
+    color: white;
+}
+
+.sponsors-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 5px;
+}
+
+.modal-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.modal-container.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal {
+    background-color: #23272A;
+    color: white;
+    width: 50%;
+    padding: 30px 50px;
+    border-radius: 5px;
+    text-justify: distribute;
+}
+
+.modal-heading {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-heading h1 {
+    margin: 0;
+}
+
+@media screen and (min-width: 760px) {
+    #home {
+        position: unset;
+        margin-bottom: 10%;
+    }
+
+    #home img {
+        width: 45%;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+    }
+
+    nav .nav-link {
+        transition: font-size 300ms;
+        margin: 0 10px;
+        flex-shrink: 0;
+        flex-grow: 0;
+    }
+
+    nav .nav-link:hover {
+        font-size: 25px;
+    }
+
+    .sponsors-list {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .sponsor-card {
+        margin: 0;
+        cursor: pointer;
+    }
+
+    .sponsor-logo {
+        width: 225px;
+        height: 225px;
+        transition: height 150ms ease-in-out, width 150ms ease-in-out;
+    }
+
+    .sponsor-logo:active {
+        height: 200px;
+        width: 200px;
+    }
+}
